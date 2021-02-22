@@ -18,27 +18,24 @@ fetch(url, {
 	console.error(err);
 });
 
-var counter = 1
+
 
 const tvShowTemplate = (shows) =>{
     container.innerHTML = "";
-    
+    let counter = 1
     for(show of shows.tv_results){
         console.log(show)
-        if(show === shows.tv_results[8]) {break}
+        if(show === shows.tv_results[10]) {break}
         let tvShowDiv = `
         <div class="episode-wrapper">
             <div class="episode">
-                <h2>${counter}.</h2><a href="details.html?type=get-show-details&imdb=${show.imdb_id}"><h2>${show.title}</h2></a>
+                <h2>${counter ++}.</h2><a href="details.html?type=get-show-details&imdb=${show.imdb_id}"><h2>${show.title}</h2></a>
             </div>
             <div class="info">
-                <p>Release Date ${show.air_date}</p>
-                <p>Rating: ${show.vote_average} </p>
-                <p>Reviews: ${show.vote_count} </p>
+                <p>Release Year ${show.year}</p>
             </div>
         </div>
         `
-        counter = counter + 1;
         container.innerHTML += tvShowDiv
     }
 }
