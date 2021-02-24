@@ -1,4 +1,6 @@
 const container = document.querySelector(".container")
+const loading = document.querySelector(".loading")
+
 
 const url = "https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-popular-shows&page=1&year=2020"
 
@@ -16,7 +18,9 @@ fetch(url, {
 
 .catch(err => {
 	console.error(err);
-});
+    container.innerHTML = "Something went wrong, blame IMDB!"
+})
+.finally(()=> loading.classList.remove("spinner-border"));
 
 
 

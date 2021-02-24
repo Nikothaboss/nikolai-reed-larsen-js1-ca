@@ -9,9 +9,7 @@ console.log(window.location.href)
 
 const url = `https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-show-details&imdb=${id}`
 const details = document.querySelector(".details")
-
-
-
+const loading = document.querySelector(".loading")
 
 fetch(url, {
 	"method": "GET",
@@ -25,10 +23,13 @@ fetch(url, {
 .then(data => detailsTemplate(data))
 .catch(err => {
 	console.error(err);
+    details.innerHTML = "Something went wrong, blame IMDB!"
 })
+.finally(()=> loading.classList.remove("spinner-border"));
 
 const detailsTemplate = (show_details) =>{
     console.log(show_details)
+    document.title = show_details.title;
     details.innerHTML = ""
     let tvDetailsDiv = `
     <div class="show-wrapper">
