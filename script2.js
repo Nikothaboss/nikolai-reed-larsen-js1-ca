@@ -1,15 +1,15 @@
-const getQS = document.location.search
+const getQS = document.location.search;
 const params = new URLSearchParams(getQS);
-const id = params.get("imdb")
+const id = params.get("imdb");
 console.log(getQS)
 console.log(params)
 console.log(id)
 console.log(window.location.href)
 
 
-const url = `https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-show-details&imdb=${id}`
-const details = document.querySelector(".details")
-const loading = document.querySelector(".loading")
+const url = `https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-show-details&imdb=${id}`;
+const details = document.querySelector(".details");
+const loading = document.querySelector(".loading");
 
 fetch(url, {
 	"method": "GET",
@@ -34,7 +34,7 @@ const detailsTemplate = (show_details) =>{
     let tvDetailsDiv = `
     <div class="show-wrapper">
         <h1>${show_details.title}</h1>
-        <h2>Description</h2>
+        <h2>Description:</h2>
         <p>${show_details.description}</p>
         <p>Rating: ${show_details.imdb_rating}</p>
         <p>Reviews: ${show_details.vote_count}</p>

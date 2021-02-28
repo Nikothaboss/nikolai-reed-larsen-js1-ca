@@ -1,27 +1,27 @@
-// form + eventlistener when you click on submit
-const form = document.querySelector("#sign-up")
-
+// form
+const form = document.querySelector("#sign-up");
 
 // all inputs
-const name = document.querySelector("#name")
-const subject = document.querySelector("#subject")
-const email = document.querySelector("#email")
-const address = document.querySelector("#address")
+const name = document.querySelector("#name");
+const subject = document.querySelector("#subject");
+const email = document.querySelector("#email");
+const address = document.querySelector("#address");
 
 // error messages
-const nameError = document.querySelector("#name-error")
-const subjectError = document.querySelector("#subject-error")
-const emailError = document.querySelector("#email-error")
-const addressError = document.querySelector("#address-error")
+const nameError = document.querySelector("#name-error");
+const subjectError = document.querySelector("#subject-error");
+const emailError = document.querySelector("#email-error");
+const addressError = document.querySelector("#address-error");
 
 // Level 2
-const success = document.querySelector(".level2")
+const success = document.querySelector(".level2");
 
 // Making the name input required
-name.setAttribute("required", "")
+name.setAttribute("required", "");
 const formValidation=(formEvent)=>{
     // making sure the form wont submit without validating it
     formEvent.preventDefault();
+    
     // Validate name, making sure the name has 2 or more characters
     let givenName = name.value.trim()
     nameError.innerHTML = "";
@@ -60,6 +60,6 @@ const formValidation=(formEvent)=>{
         success.innerHTML += "Form Submitted!"
     }
 
-} 
+};
 
 form.addEventListener("submit", formValidation);

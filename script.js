@@ -1,8 +1,8 @@
-const container = document.querySelector(".container")
-const loading = document.querySelector(".loading")
+const container = document.querySelector(".container");
+const loading = document.querySelector(".loading");
 
 
-const url = "https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-popular-shows&page=1&year=2020"
+const url = "https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-popular-shows&page=1&year=2020";
 
 fetch(url, {
 	"method": "GET",
@@ -42,4 +42,4 @@ const tvShowTemplate = (shows) =>{
         `
         container.innerHTML += tvShowDiv
     }
-}
+};
